@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "author": "Anshuman",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -67.2, "left": 177.64, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -57.3, "left": -53.4, "attrs": {} },
+    { "type": "wokwi-gas-sensor", "id": "gas1", "top": 117.9, "left": -79.4, "attrs": {} },
+    { "type": "wokwi-pir-motion-sensor", "id": "pir1", "top": 263.2, "left": -64.98, "attrs": {} },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": 406.4,
+      "left": -95.2,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-rgb-led",
+      "id": "rgb1",
+      "top": -63.2,
+      "left": 452.3,
+      "attrs": { "common": "cathode" }
+    },
+    { "type": "wokwi-buzzer", "id": "bz1", "top": 60, "left": 453, "attrs": { "volume": "0.1" } },
+    { "type": "wokwi-servo", "id": "servo1", "top": 199.6, "left": 403.2, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 13.55,
+      "left": 67.2,
+      "rotate": 90,
+      "attrs": { "value": "10000" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "dht1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "gas1:VCC", "esp:5V", "red", [ "h0" ] ],
+    [ "gas1:GND", "esp:GND.3", "black", [ "h0" ] ],
+    [ "gas1:AOUT", "esp:34", "green", [ "h0" ] ],
+    [ "pir1:VCC", "esp:5V", "red", [ "v0" ] ],
+    [ "pir1:OUT", "esp:27", "green", [ "v0" ] ],
+    [ "pir1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "ldr1:VCC", "esp:3V3", "red", [ "h0" ] ],
+    [ "ldr1:GND", "esp:GND.3", "black", [ "h0" ] ],
+    [ "ldr1:AO", "esp:35", "green", [ "h0" ] ],
+    [ "rgb1:R", "esp:25", "green", [ "v0" ] ],
+    [ "rgb1:G", "esp:26", "green", [ "v0" ] ],
+    [ "rgb1:B", "esp:33", "green", [ "v0" ] ],
+    [ "rgb1:COM", "esp:GND.2", "black", [ "v0" ] ],
+    [ "bz1:1", "esp:14", "green", [ "v0" ] ],
+    [ "bz1:2", "esp:GND.2", "black", [ "v0" ] ],
+    [ "servo1:V+", "esp:5V", "red", [ "h0" ] ],
+    [ "servo1:GND", "esp:GND.2", "black", [ "h0" ] ],
+    [ "servo1:PWM", "esp:13", "green", [ "h0" ] ],
+    [ "dht1:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "r1:1", "esp:3V3", "green", [ "h0" ] ],
+    [ "dht1:SDA", "r1:2", "green", [ "v0" ] ],
+    [ "esp:4", "r1:2", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
