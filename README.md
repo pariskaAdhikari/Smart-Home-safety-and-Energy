@@ -6,7 +6,7 @@ An ESP32-based IoT system that senses temperature, gas, motion, and light, autom
 
 - Monitors temperature, humidity, gas/smoke, motion, and light
 - Runs four automation rules: smart lighting, temperature-based ventilation, gas/smoke safety, and away-mode security
-- Computes a Home Safety Index — a 0–100 risk score fusing all sensors — to drive adaptive sensor/cloud polling
+- Computes a Home Safety Index  a 0-100 risk score fusing all sensors to drive adaptive sensor/cloud polling
 - Supports Home, Night, and Away modes that change how motion is interpreted
 - Publishes live and historical data to Adafruit IO over MQTT
 
