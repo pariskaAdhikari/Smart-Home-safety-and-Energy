@@ -1,2 +1,2 @@
 # Smart-Home-safety-and-Energy
-Senses environmental conditions, automates home safety responses, computes a Home Safety Index risk score, and streams live data to an Adafruit IO dashboard over MQTT using an ESP32.
+Senses environmental conditions, automates home safety responses, computes a Home Safety Index risk score, and streams live data to an Adafruit IO dashboard over MQTT using an ESP32. https://wokwi.com/projects/476135628216453121
